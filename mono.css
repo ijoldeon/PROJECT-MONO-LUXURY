@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  --bg: #0f0f0f;
+  --paper: #161616;
+  --text: #f0f0f0;
+  --muted: #888888;
+  --line: #2b2b2b;
+  --accent: #d4af37;
+  --dark: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 상단 알림 배너 */
+.scroll-banner {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 90%;
+  max-width: 650px;
+  min-height: 48px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  border: 1px solid var(--accent);
+  color: white;
+  font-size: 11px;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+/* 헤더 & 로고 */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 76px;
+  padding: 0 7%;
+  background: rgba(15, 15, 15, 0.95);
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.logo span {
+  color: #ffffff;
+}
+.header nav {
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+#cart-count {
+  margin-left: 4px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: black;
+}
+
+/* 메인 배너 로고 직접 삽입 스타일 */
+.hero-logo-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 580px;
+  padding: 60px 20px;
+  background-color: #0b0b0b;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.hero-banner-image-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+.hero-logo-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+}
+.hero-content-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 6vw, 64px);
+  color: var(--accent);
+  margin: 10px 0;
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* UI 요소 및 그리드 */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.button.dark {
+  background: var(--accent);
+  color: black;
+  border: none;
+  font-weight: 700;
+}
+.button.dark:hover {
+  background: #b89428;
+}
+.button.light {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.button.full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+input,
+select {
+  background: #1f1f1f;
+  border: 1px solid var(--line);
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.section {
+  padding: 60px 7%;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+.product-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+}
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+.product-name {
+  font-weight: 600;
+  margin: 8px 0 4px;
+  display: block;
+  font-size: 15px;
+}
+.product-price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.category {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.category.active {
+  background: var(--accent);
+  color: black;
+  font-weight: 700;
+}
+
+.detail-layout,
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.brand-note {
+  padding: 60px 20px;
+  background: #141414;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.footer {
+  padding: 30px 7%;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .detail-layout,
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+}
+/* 클릭 버튼 애니메이션 효과 */
+/* ==========================================
+   클릭 가능한 요소들에 대한 공통 인터랙션 애니메이션
+   ========================================== */
+
+/* 1. 상단 스크롤 배너의 SHOP NOW 링크 */
+.scroll-banner a {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.scroll-banner a:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+.scroll-banner a:active {
+  transform: scale(0.95);
+}
+
+/* 2. 헤더 로고 및 네비게이션 링크 */
+.header .logo,
+.header nav a,
+.footer .logo {
+  transition: all 0.2s ease-in-out;
+}
+.header .logo:hover,
+.header nav a:hover,
+.footer .logo:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+.header .logo:active,
+.header nav a:active,
+.footer .logo:active {
+  transform: translateY(1px);
+}
+
+/* 3. 히어로 배너의 '컬렉션 둘러보기' 버튼 */
+.hero-content-overlay .button.dark {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-content-overlay .button.dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.hero-content-overlay .button.dark:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. 카테고리 필터 버튼들 (전체, 시계, 아우터 등) */
+.categories .category {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.categories .category:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+.categories .category:active {
+  transform: scale(0.95);
+}
+/* ==========================================
+   상품 카드(큰 카테고리 영역) 호버 애니메이션
+   ========================================== */
+
+/* 상품이 들어가는 개별 카드 박스에 적용 (클래스 이름이 다르다면 맞춰서 수정 가능합니다) */
+.product-card,
+.product-item {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+/* 마우스를 올렸을 때 위로 둥실 떠오르며 그림자가 생기는 효과 */
+.product-card:hover,
+.product-item:hover {
+  transform: translateY(-6px); /* 위로 6px 뜸 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* 고급스러운 그림자 */
+}
+
+/* 클릭하는 순간 살짝 눌리는 느낌 */
+.product-card:active,
+.product-item:active {
+  transform: translateY(-2px) scale(0.99);
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주문하기 | MONO</title>
+    <link rel="stylesheet" href="./mono.css" />
+    <script src="./mono.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="./1.mono.html">MONO<span>.</span></a>
+      <nav>
+        <a href="./1.mono.html">SHOP</a>
+        <a href="./3.cart.html">CART <span id="cart-count">0</span></a>
+      </nav>
+    </header>
+
+    <main class="section narrow">
+      <p class="eyebrow">ORDER INFORMATION</p>
+      <h1 class="page-title">Checkout</h1>
+
+      <div class="checkout-layout">
+        <form id="checkout-form" class="checkout-form">
+          <h2>배송 정보</h2>
+
+          <label for="customer-name">이름</label>
+          <input
+            id="customer-name"
+            name="customerName"
+            required
+            maxlength="50"
+            placeholder="이름을 입력하세요"
+          />
+
+          <label for="customer-phone">연락처</label>
+          <input
+            id="customer-phone"
+            name="phone"
+            type="tel"
+            required
+            maxlength="20"
+            placeholder="010-0000-0000"
+          />
+
+          <label for="customer-address">주소</label>
+          <input
+            id="customer-address"
+            name="address"
+            required
+            maxlength="200"
+            placeholder="배송받을 주소"
+          />
+
+          <label for="customer-email">이메일</label>
+          <input
+            id="customer-email"
+            name="email"
+            type="email"
+            required
+            maxlength="100"
+            placeholder="example@email.com"
+          />
+
+          <h2>결제 방법</h2>
+          <label class="payment-option">
+            <input
+              type="radio"
+              name="payment"
+              value="MONO VIP 카드 결제"
+              checked
+            />
+            연습용 카드 결제
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="무통장 입금 연습" />
+            무통장 입금 연습
+          </label>
+
+          <p class="notice">
+            실제 결제는 진행되지 않습니다. 개인정보 유의하세요.
+          </p>
+
+          <button id="place-order" type="submit" class="button dark full">
+            주문 완료하기
+          </button>
+          <a class="button light full" href="./3.cart.html"
+            >장바구니로 돌아가기</a
+          >
+        </form>
+
+        <aside class="order-summary">
+          <h2>주문 상품 Summary</h2>
+          <div id="checkout-items"></div>
+          <div class="summary-row">
+            <span>총 주문 금액</span>
+            <strong id="checkout-total">0원</strong>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <a class="logo" href="./1.mono.html">MONO<span>.</span></a>
+      <p>대표 : 이성전</p>
+      <p>문의 : leesj9702@naver.com</p>
+      <p style="margin-top: 8px; color: #666; font-size: 10px">
+        웹 개발 연습용 쇼핑몰 · 실제 결제 없음
+      </p>
+    </footer>
+  </body>
+</html>
